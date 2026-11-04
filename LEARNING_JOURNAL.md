@@ -110,3 +110,23 @@ the pending exercise and questions.
 
 Publication target: `ManeeGit/earthquake-data-pipeline`. Remote publication and
 CI verification are pending authentication at the time of this entry.
+
+## 2026-11-04 — published and verified on GitHub
+
+- Created the public repository:
+  [ManeeGit/earthquake-data-pipeline](https://github.com/ManeeGit/earthquake-data-pipeline).
+- Pushed the initial commit `916bb80a44b9280a3f7f0e1806ec20944de5f532` to `main`
+  with 20 source and documentation files. No environment, generated captures or
+  unrelated Desktop files were published.
+- Verified the uploaded Git tree matched the local committed tree exactly:
+  `374e6c3558f615866d3a33e0f81476ef02447784`.
+- Confirmed public visibility, default branch `main`, project description and
+  relevant repository topics.
+- The first [GitHub verification run](https://github.com/ManeeGit/earthquake-data-pipeline/actions/runs/41909951061)
+  completed successfully, including dependency checks, the offline pytest suite
+  and the synthetic demo on Ubuntu.
+- Added a live workflow-status badge to the README; its state comes from GitHub.
+
+Next: discuss the pending milestone 1 exercise and questions before beginning
+transformation and quarantine in milestone 2. Publication does not change the
+implemented milestone scope.

@@ -1,5 +1,7 @@
 # Earthquake Data Pipeline
 
+[![Offline tests](https://github.com/ManeeGit/earthquake-data-pipeline/actions/workflows/tests.yml/badge.svg?branch=main)](https://github.com/ManeeGit/earthquake-data-pipeline/actions/workflows/tests.yml)
+
 **A local data engineering project, built one understandable milestone at a time.**
 
 Capture earthquake-shaped JSON, preserve its provenance, and learn how to turn
