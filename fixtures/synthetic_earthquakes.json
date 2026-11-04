@@ -1,0 +1,39 @@
+{
+  "type": "FeatureCollection",
+  "metadata": {
+    "title": "SYNTHETIC teaching fixture: invented events, not USGS observations",
+    "synthetic": true,
+    "day_utc": "2024-01-01",
+    "count": 2
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "id": "synthetic-001",
+      "properties": {
+        "time": 1704067200000,
+        "updated": 1704067800000,
+        "mag": 2.5,
+        "place": "SYNTHETIC location A"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-122.5, 38.5, 7.0]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "synthetic-002",
+      "properties": {
+        "time": 1704070800000,
+        "updated": 1704071100000,
+        "mag": null,
+        "place": "SYNTHETIC location B"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-155.2, 19.4, 3.2]
+      }
+    }
+  ]
+}

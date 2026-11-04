@@ -1,0 +1,48 @@
+name: Offline tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: offline-tests-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  offline:
+    # Standard public runners are free. Skip private copies to avoid paid usage.
+    if: ${{ github.event.repository.private == false }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - name: Check out source
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+
+      - name: Set up the pinned Python version
+        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version-file: .python-version
+
+      - name: Create the isolated environment
+        run: python -m venv .venv
+
+      - name: Install pinned dependencies
+        run: >-
+          .venv/bin/python -m pip install --only-binary=:all: --timeout 20 --retries 2 -r requirements.txt
+
+      - name: Check dependency compatibility
+        run: .venv/bin/python -m pip check
+
+      - name: Run offline tests
+        run: .venv/bin/python -m pytest -q
+
+      - name: Run the synthetic demo
+        run: .venv/bin/python -m earthquake_pipeline offline --raw-dir "$RUNNER_TEMP/earthquake-demo"

@@ -1,0 +1,9 @@
+# Direct dependencies, selected for Python 3.14 on Apple Silicon.
+duckdb==1.4.3
+pytest==9.0.2
+
+# pytest's dependencies on Python 3.14 / macOS, pinned for repeatability.
+iniconfig==2.3.0
+packaging==25.0
+pluggy==1.6.0
+Pygments==2.19.2
